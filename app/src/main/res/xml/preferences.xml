@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+				  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<PreferenceCategory
+		android:title="Primary Colors">
+
+		<com.jaredrummler.android.colorpicker.ColorPreference
+			android:defaultValue="@color/colorPrimary"
+			android:key="PRIMARY"
+			android:title="Action Bar Color"/>
+
+		<com.jaredrummler.android.colorpicker.ColorPreference
+			android:defaultValue="@color/colorPrimaryDark"
+			android:key="PRIMARY_DARK"
+			android:title="Status Bar Color"/>
+
+		<com.jaredrummler.android.colorpicker.ColorPreference
+			android:defaultValue="@color/colorAccent"
+			android:key="PRIMARY_LIGHT"
+			android:title="Accent Color"/>
+	</PreferenceCategory>
+
+	<!---->
+
+	<PreferenceCategory
+		android:title="Dark Theme">
+
+		<com.jaredrummler.android.colorpicker.ColorPreference
+			android:defaultValue="@color/colorPrimary"
+			android:key="PROGRESS_FILL_INVERSE"
+			android:title="Progressbar Fill"/>
+
+		<com.jaredrummler.android.colorpicker.ColorPreference
+			android:defaultValue="@color/colorAccent"
+			android:key="PROGRESS_BG_INVERSE"
+			android:title="Progressbar BG"/>
+	</PreferenceCategory>
+
+	<!---->
+
+	<PreferenceCategory
+		android:title="White Theme">
+
+		<com.jaredrummler.android.colorpicker.ColorPreference
+			android:defaultValue="@color/colorPrimary"
+			android:key="PROGRESS_FILL"
+			android:title="Progressbar Fill"/>
+
+		<com.jaredrummler.android.colorpicker.ColorPreference
+			android:defaultValue="@color/colorPrimaryDark"
+			android:key="PROGRESS_BG"
+			android:title="Progressbar BG"/>
+	</PreferenceCategory>
+
+
+</PreferenceScreen>

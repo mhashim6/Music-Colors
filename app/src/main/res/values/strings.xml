@@ -1,0 +1,10 @@
+<resources>
+	<string name="app_name">Music Colors</string>
+	<string name="dark_theme_title">Dark Theme</string>
+	<string name="universal_theme_title">Common Colors</string>
+	<string name="light_theme_title">Light Theme</string>
+
+	<!-- TODO: Remove or change this placeholder text -->
+	<string name="hello_blank_fragment">Hello blank fragment</string>
+	<string name="done">Done</string>
+</resources>

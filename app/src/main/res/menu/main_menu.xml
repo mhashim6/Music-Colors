@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+	<item
+		android:id="@+id/reset_item"
+		android:title="Reset"
+		app:showAsAction="ifRoom"/>
+	<item
+		android:id="@+id/github_item"
+		android:title="Developer"
+		app:showAsAction="never"/>
+
+	<item
+		android:id="@+id/donate_item"
+		android:title="Donate"
+		app:showAsAction="never"/>
+
+	<item
+		android:id="@+id/credits_item"
+		android:title="Libraries"
+		app:showAsAction="never"/>
+
+</menu>
