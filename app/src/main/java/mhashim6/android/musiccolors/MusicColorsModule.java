@@ -11,20 +11,20 @@ import de.robv.android.xposed.callbacks.XC_InitPackageResources.InitPackageResou
  * Created by mhashim6 on 07/05/2017.
  */
 
-public class Module implements IXposedHookInitPackageResources, IXposedHookZygoteInit {
+public class MusicColorsModule implements IXposedHookInitPackageResources, IXposedHookZygoteInit {
 
-	public static final String PRIMARY_KEY = "PRIMARY";
-	public static final String PRIMARY_DARK_KEY = "PRIMARY_DARK";
-	public static final String PRIMARY_LIGHT_KEY = "PRIMARY_LIGHT";
-	public static final String PROGRESS_FILL_KEY = "PROGRESS_FILL";
-	public static final String PROGRESS_BG_KEY = "PROGRESS_BG";
+	private static final String PRIMARY_KEY = "PRIMARY";
+	private static final String PRIMARY_DARK_KEY = "PRIMARY_DARK";
+	private static final String PRIMARY_LIGHT_KEY = "PRIMARY_LIGHT";
+	private static final String PROGRESS_FILL_KEY = "PROGRESS_FILL";
+	private static final String PROGRESS_BG_KEY = "PROGRESS_BG";
 
-	public static final String PRIMARY_LIGHT_INVERSE_KEY = "PRIMARY_LIGHT_INVERSE";
-	public static final String PROGRESS_FILL_INVERSE_KEY = "PROGRESS_FILL_INVERSE";
-	public static final String PROGRESS_BG_INVERSE_KEY = "PROGRESS_BG_INVERSE";
+	private static final String PRIMARY_LIGHT_INVERSE_KEY = "PRIMARY_LIGHT_INVERSE";
+	private static final String PROGRESS_FILL_INVERSE_KEY = "PROGRESS_FILL_INVERSE";
+	private static final String PROGRESS_BG_INVERSE_KEY = "PROGRESS_BG_INVERSE";
 
 	private static final String MUSIC_PACKAGE = "com.sonyericsson.music";
-	public static final String PACKAGE_NAME = "mhashim6.android.musiccolors";
+	private static final String PACKAGE_NAME = "mhashim6.android.musiccolors";
 	private static final String COLORS_PREFS = "colors_prefs";
 	private static final String COLOR_TYPE = "color";
 

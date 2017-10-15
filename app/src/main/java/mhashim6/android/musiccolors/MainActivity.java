@@ -21,16 +21,23 @@ import eu.chainfire.libsuperuser.Shell;
 
 public class MainActivity extends AppCompatActivity {
 
-	public static final String TAG = "MusicColorsUI";
-	public static final String CHMOD_755 = "chmod 755";
-	public static final String CHMOD_664 = "chmod 664";
+	private static final String TAG = "MusicColorsUI";
+
+	private static final String CHMOD_755 = "chmod 755";
+	private static final String CHMOD_664 = "chmod 664";
+
+	public static final String PREFS_FOLDER = " /data/data/mhashim6.android.musiccolors/shared_prefs\n";
+	public static final String PREFS_FILE = " /data/data/mhashim6.android.musiccolors/shared_prefs/colors_prefs.xml\n";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+		toolbar.setTitleTextColor(getResources().getColor(android.R.color.white));
 		setSupportActionBar(toolbar);
+
 		getFragmentManager().beginTransaction().replace(R.id.mainActivity, new ColorPickerFragment()).commit();
 
 		checkSu();
@@ -43,12 +50,12 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private void checkSu() {
-		Toast.makeText(this, "Checking for Root", Toast.LENGTH_SHORT).show();
+		Toast.makeText(this, R.string.root_check, Toast.LENGTH_SHORT).show();
 
 		AsyncTask.execute(() -> {
 			if (!Shell.SU.available())
 				new Handler(Looper.getMainLooper()).post(() -> Toast.makeText(MainActivity.this,
-						"You are not rooted, the module will not work!", Toast.LENGTH_LONG).show());
+						R.string.root_failure, Toast.LENGTH_LONG).show());
 		});
 	}
 
@@ -77,17 +84,16 @@ public class MainActivity extends AppCompatActivity {
 			}
 
 			sudoFixPermissions();
-
 			Log.d(TAG, "Saved Preferences Successfully.");
 		});
 	}
 
 	private void sudoFixPermissions() {
 		//prefs folder permissions.
-		Shell.SU.run(CHMOD_755 + " /data/data/mhashim6.android.musiccolors/shared_prefs\n");
+		Shell.SU.run(CHMOD_755 + PREFS_FOLDER);
 
 		// Set preferences file permissions to be world readable
-		Shell.SU.run(CHMOD_664 + " /data/data/mhashim6.android.musiccolors/shared_prefs/colors_prefs.xml\n");
+		Shell.SU.run(CHMOD_664 + PREFS_FILE);
 	}
 
 	@Override
@@ -97,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
 		MenuItem reset = menu.findItem(R.id.reset_item);
 		reset.setOnMenuItemClickListener(item -> {
 			resetColors();
-			Toast.makeText(this, R.string.done, Toast.LENGTH_SHORT).show();
 			return true;
 		});
 
@@ -125,7 +130,9 @@ public class MainActivity extends AppCompatActivity {
 	private void resetColors() {
 		SharedPreferences preferences = getSharedPreferences("colors_prefs", MODE_PRIVATE);
 		SharedPreferences.Editor editor = preferences.edit();
-		editor.clear().apply();
+
+		editor.clear().commit();
+		recreate();
 	}
 
 	public final void openWebPage(String url) {

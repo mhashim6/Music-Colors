@@ -9,33 +9,33 @@
 		<com.jaredrummler.android.colorpicker.ColorPreference
 			android:defaultValue="@color/colorPrimary"
 			android:key="PRIMARY"
-			android:title="Action Bar Color"/>
+			android:title="@string/actionbar"/>
 
 		<com.jaredrummler.android.colorpicker.ColorPreference
 			android:defaultValue="@color/colorPrimaryDark"
 			android:key="PRIMARY_DARK"
-			android:title="Status Bar Color"/>
+			android:title="@string/statusbar"/>
 
 		<com.jaredrummler.android.colorpicker.ColorPreference
 			android:defaultValue="@color/colorAccent"
 			android:key="PRIMARY_LIGHT"
-			android:title="Accent Color"/>
+			android:title="@string/accent"/>
 	</PreferenceCategory>
 
 	<!---->
 
 	<PreferenceCategory
-		android:title="Dark Theme">
+		android:title="@string/dark_theme">
 
 		<com.jaredrummler.android.colorpicker.ColorPreference
 			android:defaultValue="@color/colorPrimary"
 			android:key="PROGRESS_FILL_INVERSE"
-			android:title="Progressbar Fill"/>
+			android:title="@string/progress_fill"/>
 
 		<com.jaredrummler.android.colorpicker.ColorPreference
 			android:defaultValue="@color/colorAccent"
 			android:key="PROGRESS_BG_INVERSE"
-			android:title="Progressbar BG"/>
+			android:title="@string/progress_bg"/>
 	</PreferenceCategory>
 
 	<!---->
@@ -46,12 +46,12 @@
 		<com.jaredrummler.android.colorpicker.ColorPreference
 			android:defaultValue="@color/colorPrimary"
 			android:key="PROGRESS_FILL"
-			android:title="Progressbar Fill"/>
+			android:title="@string/progress_fill"/>
 
 		<com.jaredrummler.android.colorpicker.ColorPreference
 			android:defaultValue="@color/colorPrimaryDark"
 			android:key="PROGRESS_BG"
-			android:title="Progressbar BG"/>
+			android:title="@string/progress_bg"/>
 	</PreferenceCategory>
 
 

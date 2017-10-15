@@ -13,6 +13,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="?attr/actionBarSize"
 		android:background="@color/colorPrimary"
+		android:theme="@style/AppTheme.ActionBar"
 		app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
 		app:title="@string/app_name"
 		/>

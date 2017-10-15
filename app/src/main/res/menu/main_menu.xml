@@ -4,21 +4,21 @@
 
 	<item
 		android:id="@+id/reset_item"
-		android:title="Reset"
+		android:title="@string/reset"
 		app:showAsAction="ifRoom"/>
 	<item
 		android:id="@+id/github_item"
-		android:title="Developer"
+		android:title="@string/developer"
 		app:showAsAction="never"/>
 
 	<item
 		android:id="@+id/donate_item"
-		android:title="Donate"
+		android:title="@string/donate"
 		app:showAsAction="never"/>
 
 	<item
 		android:id="@+id/credits_item"
-		android:title="Libraries"
+		android:title="@string/libraries"
 		app:showAsAction="never"/>
 
 </menu>

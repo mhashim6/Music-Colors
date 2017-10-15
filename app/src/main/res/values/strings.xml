@@ -1,10 +1,19 @@
 <resources>
 	<string name="app_name">Music Colors</string>
-	<string name="dark_theme_title">Dark Theme</string>
-	<string name="universal_theme_title">Common Colors</string>
-	<string name="light_theme_title">Light Theme</string>
+	<string name="dark_theme">Dark Theme</string>
+	<string name="primary_theme">Primary_theme Colors</string>
+	<string name="light_theme">Light Theme</string>
 
-	<!-- TODO: Remove or change this placeholder text -->
-	<string name="hello_blank_fragment">Hello blank fragment</string>
-	<string name="done">Done</string>
+	<string name="root_failure">Root permissions were not granted, module might not work!</string>
+	<string name="root_check">Checking for Root</string>
+	<string name="actionbar">Action Bar Color</string>
+	<string name="statusbar">Status Bar Color</string>
+	<string name="accent">Accent Color</string>
+	<string name="progress_fill">Progressbar Fill</string>
+	<string name="progress_bg">Progressbar BG</string>
+
+	<string name="reset">Reset</string>
+	<string name="developer">Developer</string>
+	<string name="donate">Donate</string>
+	<string name="libraries">Libraries</string>
 </resources>
