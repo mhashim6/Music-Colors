@@ -1,7 +1,6 @@
 package mhashim6.android.musiccolors;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -89,22 +88,12 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private void sudoFixPermissions() {
-		//prefs folder permissions.
-		Shell.SU.run(CHMOD_755 + PREFS_FOLDER);
-
-		// Set preferences file permissions to be world readable
-		Shell.SU.run(CHMOD_664 + PREFS_FILE);
+		Shell.SU.run(new String[]{CHMOD_755 + PREFS_FOLDER, CHMOD_664 + PREFS_FILE});
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main_menu, menu);
-
-		MenuItem reset = menu.findItem(R.id.reset_item);
-		reset.setOnMenuItemClickListener(item -> {
-			resetColors();
-			return true;
-		});
 
 		MenuItem github = menu.findItem(R.id.github_item);
 		github.setOnMenuItemClickListener(item -> {
@@ -127,13 +116,13 @@ public class MainActivity extends AppCompatActivity {
 		return super.onCreateOptionsMenu(menu);
 	}
 
-	private void resetColors() {
+	/*private void resetColors() {
 		SharedPreferences preferences = getSharedPreferences("colors_prefs", MODE_PRIVATE);
 		SharedPreferences.Editor editor = preferences.edit();
 
 		editor.clear().commit();
 		recreate();
-	}
+	}*/
 
 	public final void openWebPage(String url) {
 		Intent googleSearchIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));

@@ -43,6 +43,9 @@ public class MusicColorsModule implements IXposedHookInitPackageResources, IXpos
 
 		preferences.reload();
 
+		if (!preferences.getBoolean("master_switch_pref", true))
+			return;
+
 		/*White theme*/
 		final int PRIMARY = preferences.getInt(PRIMARY_KEY, Color.parseColor("#5c3bb5"));
 		final int PRIMARY_DARK = preferences.getInt(PRIMARY_DARK_KEY, Color.parseColor("#462d8a"));

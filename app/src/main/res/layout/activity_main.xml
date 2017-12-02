@@ -15,8 +15,13 @@
 		android:background="@color/colorPrimary"
 		android:theme="@style/AppTheme.ActionBar"
 		app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-		app:title="@string/app_name"
-		/>
+		app:title="@string/app_name">
+
+		<Switch
+			android:id="@+id/master_switch"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+	</android.support.v7.widget.Toolbar>
 
 	<ListView
 		android:id="@android:id/list"
